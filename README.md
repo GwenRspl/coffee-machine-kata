@@ -1,2 +1,2 @@
-# coffee-machine-kata
-Coffee Machine Project Kata
+# Coffee-Machine-Kata
+Kata from http://simcap.github.io/coffeemachine/
