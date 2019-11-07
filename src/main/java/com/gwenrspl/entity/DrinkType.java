@@ -5,20 +5,30 @@ package com.gwenrspl.entity;
  * @author GwenRspl
  */
 public enum DrinkType {
-    COFFEE('C'),
-    CHOCOLATE('H'),
-    TEA('T');
+    COFFEE('C', 0.6f),
+    CHOCOLATE('H', 0.5f),
+    TEA('T', 0.4f);
 
     /**
      * The letter corresponding to the drink
      */
     private char protocolLetter;
 
-    DrinkType(char protocolLetter) {
+    /**
+     * The price of the drink
+     */
+    private float price;
+
+    DrinkType(char protocolLetter, float price) {
         this.protocolLetter = protocolLetter;
+        this.price = price;
     }
 
     public char getProtocolLetter() {
         return protocolLetter;
+    }
+
+    public float getPrice() {
+        return price;
     }
 }

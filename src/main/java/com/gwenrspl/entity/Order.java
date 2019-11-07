@@ -16,9 +16,15 @@ public class Order {
      */
     private int sugar;
 
-    public Order(DrinkType drinkType, int sugar) {
+    /**
+     * The money inserted in the coffee machine
+     */
+    private float insertedMoney;
+
+    public Order(DrinkType drinkType, int sugar, float insertedMoney) {
         this.drinkType = drinkType;
         this.sugar = sugar;
+        this.insertedMoney = insertedMoney;
     }
 
     public DrinkType getDrinkType() {
@@ -27,5 +33,9 @@ public class Order {
 
     public int getSugar() {
         return sugar;
+    }
+
+    public float getInsertedMoney() {
+        return insertedMoney;
     }
 }

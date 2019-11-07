@@ -19,12 +19,14 @@ public class CoffeeMachineLogic {
      * @param order The order of the customer
      * @return A protocol as a String
      */
-    public String translateOrder(Order order){
-        StringBuilder translatedOrder = new StringBuilder();
+    String translateOrder(Order order){
         if(order.getDrinkType() == null || order.getSugar() > 2) {
             return "M:There-was-a-problem-with-your-order.Try-again-later.";
+        } else if (order.getInsertedMoney() < order.getDrinkType().getPrice()){
+            float missingAmount = (order.getDrinkType().getPrice() - order.getInsertedMoney());
+            return "M:" + missingAmount + "cents";
         }
-        translatedOrder.append(order.getDrinkType().getProtocolLetter());
+        StringBuilder translatedOrder = new StringBuilder().append(order.getDrinkType().getProtocolLetter());
         translatedOrder.append(":");
         if(order.getSugar() != 0){
             translatedOrder.append(order.getSugar());
