@@ -27,6 +27,9 @@ public class CoffeeMachineLogic {
             return "M:" + missingAmount + "cents";
         }
         StringBuilder translatedOrder = new StringBuilder().append(order.getDrinkType().getProtocolLetter());
+        if(order.isExtraHot()){
+            translatedOrder.append("h");
+        }
         translatedOrder.append(":");
         if(order.getSugar() != 0){
             translatedOrder.append(order.getSugar());

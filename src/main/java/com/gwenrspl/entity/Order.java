@@ -21,10 +21,16 @@ public class Order {
      */
     private float insertedMoney;
 
-    public Order(DrinkType drinkType, int sugar, float insertedMoney) {
+    /**
+     * Did the customer want the extra hot option
+     */
+    private boolean extraHot;
+
+    public Order(DrinkType drinkType, int sugar, float insertedMoney, boolean extraHot) {
         this.drinkType = drinkType;
         this.sugar = sugar;
         this.insertedMoney = insertedMoney;
+        this.extraHot = extraHot;
     }
 
     public DrinkType getDrinkType() {
@@ -37,5 +43,9 @@ public class Order {
 
     public float getInsertedMoney() {
         return insertedMoney;
+    }
+
+    public boolean isExtraHot() {
+        return extraHot;
     }
 }

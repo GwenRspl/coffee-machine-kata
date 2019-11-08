@@ -7,7 +7,8 @@ package com.gwenrspl.entity;
 public enum DrinkType {
     COFFEE('C', 0.6f),
     CHOCOLATE('H', 0.5f),
-    TEA('T', 0.4f);
+    TEA('T', 0.4f),
+    ORANGE('O', 0.6f);
 
     /**
      * The letter corresponding to the drink
