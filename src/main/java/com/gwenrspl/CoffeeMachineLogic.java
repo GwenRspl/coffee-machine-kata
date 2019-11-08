@@ -9,9 +9,11 @@ import com.gwenrspl.entity.Order;
 public class CoffeeMachineLogic {
 
     private DrinkMaker drinkMaker;
+    private Report report;
 
-    public CoffeeMachineLogic(DrinkMaker drinkMaker) {
+    public CoffeeMachineLogic(DrinkMaker drinkMaker, Report report) {
         this.drinkMaker = drinkMaker;
+        this.report = report;
     }
 
     /**
@@ -47,6 +49,15 @@ public class CoffeeMachineLogic {
      */
     public void sendOrder(Order order){
         String translatedOrder = translateOrder(order);
+        if(translatedOrder.charAt(0) != 'M'){
+            report.addToHistory(order);
+        }
         this.drinkMaker.execute(translatedOrder);
     }
+
+    public String printReport() {
+        return this.report.toString();
+    }
+
 }
+

@@ -17,11 +17,13 @@ class CoffeeMachineLogicTest {
     private DrinkMaker drinkMaker;
     @InjectMocks
     private CoffeeMachineLogic coffeeMachineLogic;
+    private Report report;
 
     @BeforeEach
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        coffeeMachineLogic = new CoffeeMachineLogic(drinkMaker);
+        report = new Report();
+        coffeeMachineLogic = new CoffeeMachineLogic(drinkMaker, report);
     }
 
     @Test
@@ -141,6 +143,24 @@ class CoffeeMachineLogicTest {
         Order order = new Order(DrinkType.TEA, 2, 0.7f, true);
         String expectedString = "Th:2:0";
         String actualString = coffeeMachineLogic.translateOrder(order);
+        assertThat(actualString).isEqualTo(expectedString);
+    }
+
+    @Test
+    public void should_print_correct_report_when_asking_for_report_after_orders_of_two_coffees_and_one_tea(){
+        Order order1 = new Order(DrinkType.COFFEE, 2, 0.7f, true);
+        Order order2 = new Order(DrinkType.COFFEE, 1, 0.7f, false);
+        Order order3 = new Order(DrinkType.TEA, 0, 0.7f, true);
+        coffeeMachineLogic.sendOrder(order1);
+        coffeeMachineLogic.sendOrder(order2);
+        coffeeMachineLogic.sendOrder(order3);
+
+        String expectedString = "Coffees: 2\n" +
+                "Chocolates: 0\n" +
+                "Tea: 1\n" +
+                "Orange juice: 0\n" +
+                "Money earned: 1.6 euros";
+        String actualString = coffeeMachineLogic.printReport();
         assertThat(actualString).isEqualTo(expectedString);
     }
 
