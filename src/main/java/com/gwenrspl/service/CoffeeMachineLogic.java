@@ -1,4 +1,4 @@
-package com.gwenrspl;
+package com.gwenrspl.service;
 
 import com.gwenrspl.entity.Order;
 import com.gwenrspl.entity.Report;

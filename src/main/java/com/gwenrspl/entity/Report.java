@@ -4,11 +4,30 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
 
+/**
+ * The entity representing the report
+ * @author GwenRspl
+ */
 public class Report {
+    /**
+     * The number of coffee sold
+     */
     private int numberOfCoffee;
+    /**
+     * The number of chocolate sold
+     */
     private int numberOfChocolate;
+    /**
+     * The number of tea sold
+     */
     private int numberOfTea;
+    /**
+     * The number of orange juice sold
+     */
     private int numberOfOrangeJuice;
+    /**
+     * The total amount of money earned
+     */
     private double totalMoneyEarned;
 
     public Report() {
@@ -22,6 +41,10 @@ public class Report {
         this.totalMoneyEarned = totalMoneyEarned;
     }
 
+    /**
+     * THe method to add an order to the report
+     * @param order The order to enter in the report
+     */
     public void addToHistory(Order order) {
         switch (order.getDrinkType()){
             case COFFEE :

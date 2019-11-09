@@ -1,4 +1,4 @@
-package com.gwenrspl;
+package com.gwenrspl.entity;
 
 import com.gwenrspl.entity.DrinkType;
 import com.gwenrspl.entity.Order;

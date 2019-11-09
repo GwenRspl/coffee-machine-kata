@@ -1,4 +1,4 @@
-package com.gwenrspl;
+package com.gwenrspl.service;
 
 import com.gwenrspl.entity.DrinkType;
 import com.gwenrspl.entity.Order;
@@ -6,6 +6,7 @@ import com.gwenrspl.entity.Report;
 import com.gwenrspl.interfaces.BeverageQuantityChecker;
 import com.gwenrspl.interfaces.DrinkMaker;
 import com.gwenrspl.interfaces.EmailNotifier;
+import com.gwenrspl.service.CoffeeMachineLogic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -26,12 +27,11 @@ class CoffeeMachineLogicTest {
     private EmailNotifier emailNotifier;
     @InjectMocks
     private CoffeeMachineLogic coffeeMachineLogic;
-    private Report report;
 
     @BeforeEach
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        report = new Report();
+        Report report = new Report();
         coffeeMachineLogic = new CoffeeMachineLogic(drinkMaker, report, beverageQuantityChecker, emailNotifier);
     }
 
