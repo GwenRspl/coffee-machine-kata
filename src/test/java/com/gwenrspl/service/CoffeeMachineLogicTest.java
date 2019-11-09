@@ -6,7 +6,6 @@ import com.gwenrspl.entity.Report;
 import com.gwenrspl.interfaces.BeverageQuantityChecker;
 import com.gwenrspl.interfaces.DrinkMaker;
 import com.gwenrspl.interfaces.EmailNotifier;
-import com.gwenrspl.service.CoffeeMachineLogic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

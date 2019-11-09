@@ -1,8 +1,5 @@
 package com.gwenrspl.entity;
 
-import com.gwenrspl.entity.DrinkType;
-import com.gwenrspl.entity.Order;
-import com.gwenrspl.entity.Report;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
