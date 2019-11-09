@@ -1,6 +1,4 @@
-package com.gwenrspl;
-
-import com.gwenrspl.entity.Order;
+package com.gwenrspl.entity;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
